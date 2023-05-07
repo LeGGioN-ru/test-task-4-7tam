@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public abstract class Lobby : MonoBehaviour, IButtonClickable
 {
@@ -12,6 +11,8 @@ public abstract class Lobby : MonoBehaviour, IButtonClickable
     {
         if (IsLobbyNameCorrect())
             ProcessLobby();
+
+        CanvasGroupSwitcher.Instance.Disable();
     }
 
     private bool IsLobbyNameCorrect()
