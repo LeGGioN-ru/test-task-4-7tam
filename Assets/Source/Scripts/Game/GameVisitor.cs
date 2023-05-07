@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(CanvasGroup))]
 public class GameVisitor : MonoBehaviour
 {
-    [SerializeField] private ServerCreator _serverCreator;
+    [SerializeField] private LobbyCreator _lobbyCreator;
 
     private CanvasGroup _canvasGroup;
     private readonly string _loadingSceneName = "Loading";
@@ -16,12 +16,12 @@ public class GameVisitor : MonoBehaviour
 
     private void OnEnable()
     {
-        _serverCreator.Created += VisitGame;
+        _lobbyCreator.Created += VisitGame;
     }
 
     private void OnDisable()
     {
-        _serverCreator.Created -= VisitGame;
+        _lobbyCreator.Created -= VisitGame;
     }
 
     private void VisitGame()

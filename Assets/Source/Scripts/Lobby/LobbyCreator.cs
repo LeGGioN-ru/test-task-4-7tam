@@ -3,7 +3,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-public class ServerCreator : MonoBehaviour, IButtonClickable
+public class LobbyCreator : MonoBehaviour, IButtonClickable
 {
     [SerializeField] private TMP_InputField _lobbyName;
 
