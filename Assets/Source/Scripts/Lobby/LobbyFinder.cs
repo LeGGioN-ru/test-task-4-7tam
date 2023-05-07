@@ -1,5 +1,4 @@
 using Photon.Pun;
-using System;
 
 public class LobbyFinder : Lobby
 {
