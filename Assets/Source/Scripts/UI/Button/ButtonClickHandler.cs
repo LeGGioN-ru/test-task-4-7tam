@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,10 +26,7 @@ public class ButtonClickHandler : MonoBehaviour
     private void OnClick()
     {
         if (_clickables.Length == 0)
-        {
-            ErrorTextShower.Instance.Execute("1");
-            return;
-        }
+            throw new ArgumentNullException("Обработчику кликов нечего обрабатывать");
 
         foreach (IButtonClickable clickable in _clickables)
             clickable.OnClick();
