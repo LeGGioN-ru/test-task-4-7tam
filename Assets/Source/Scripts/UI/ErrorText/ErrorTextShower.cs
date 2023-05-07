@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
-using DG.Tweening;
 
 public class ErrorTextShower : MonoBehaviour
 {
