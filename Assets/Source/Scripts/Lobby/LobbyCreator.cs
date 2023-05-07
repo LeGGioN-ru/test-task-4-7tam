@@ -1,28 +1,13 @@
 using Photon.Pun;
 using System;
-using TMPro;
-using UnityEngine;
 
-public class LobbyCreator : MonoBehaviour, IButtonClickable
+public class LobbyCreator : Lobby
 {
-    [SerializeField] private TMP_InputField _lobbyName;
-
     public Action Created;
 
-    public void OnClick()
+    protected override void ProcessLobby()
     {
-        CreateRoom();
-    }
-
-    private void CreateRoom()
-    {
-        if (string.IsNullOrEmpty(_lobbyName.text))
-        {
-            ErrorTextShower.Instance.Execute("Название лобби не может быть пустым");
-            return;
-        }
-
-        PhotonNetwork.CreateRoom(_lobbyName.text);
+        PhotonNetwork.CreateRoom(LobbyName);
         Created?.Invoke();
     }
 }
